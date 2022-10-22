@@ -12,35 +12,35 @@
     
 // circle.draw(); 
 
-//Factory Function
-function createCircle(radius){
-    return  {
-        radius,
-        draw: function(){
-            console.log('draw');
-        }
-    }
-}
+// //Factory Function
+// function createCircle(radius){
+//     return  {
+//         radius,
+//         draw: function(){
+//             console.log('draw');
+//         }
+//     }
+// }
 
-const circle = createCircle(1);
+// const circle = createCircle(1);
 
-//Constructor function
-function Circle(radius){
-    this.radius = radius;
-    this.draw = function(){
-        console.log('draw');
-    }
-}
+// //Constructor function
+// function Circle(radius){
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('draw');
+//     }
+// }
 
-const another = new Circle(1);
+// const another = new Circle(1);
 
-function countBy(x, n) {
+// function countBy(x, n) {
 
-    let z = Array(n).fill(1).map( (_, index) => (index + 1) * x);
-    console.log(z); 
+//     let z = Array(n).fill(1).map( (_, index) => (index + 1) * x);
+//     console.log(z); 
 
-    return z;
-}
+//     return z;
+// }
 
 // function accum(s) {
 //     return s.split('').reduce( (m, value, index, )=>{
@@ -401,34 +401,42 @@ function countBy(x, n) {
 //     console.log(this.toUpperCase() === this.toString() );
 // }
 
-// const str = 'AAAA';
-// str.isUpperCase();
+// // const str = 'AAAA';
+// // str.isUpperCase();
 
-function wave(str){
-  let arr = [];
-  for(let i = 0 ; i < str.length ; i++){
-    let upper = str[i].toUpperCase();
-    if(upper !== ' '){
-        let first = str.slice(0,i)
-        let last = str.slice(i+1)
-        arr.push(first + upper + last);
-    }
-  }
-  return (arr);
-}
+// function wave(str){
+//   let arr = [];
+//   for(let i = 0 ; i < str.length ; i++){
+//     let upper = str[i].toUpperCase();
+//     if(upper !== ' '){
+//         let first = str.slice(0,i)
+//         let last = str.slice(i+1)
+//         arr.push(first + upper + last);
+//     }
+//   }
+//   return (arr);
+// }
 
-function wave2(str){
-    let result = [];
+// function wave2(str){
+//     let result = [];
     
-    str.split("").forEach((char, index) => {
-        if (/[a-z]/.test(char)) {
-            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
-        }
-    });
+//     str.split("").forEach((char, index) => {
+//         if (/[a-z]/.test(char)) {
+//             result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+//         }
+//     });
     
-    return result;
-}
+//     return result;
+// }
 
-console.log(wave('hello'))
-console.log(wave2('hello'))
-console.log(wave2('hello')==wave('hello'))
+// console.log(wave('hello'))
+// console.log(wave2('hello'))
+// console.log(wave2('hello')==wave('hello'))
+
+
+function disemvowel(str) {
+    
+    return str.replace(/[aeiou]/gi , '');
+}
+const str ='This website is for losers LOL!';
+console.log(disemvowel(str));
