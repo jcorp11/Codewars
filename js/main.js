@@ -434,9 +434,29 @@
 // console.log(wave2('hello')==wave('hello'))
 
 
-function disemvowel(str) {
+// function disemvowel(str) {
     
-    return str.replace(/[aeiou]/gi , '');
+//     return str.replace(/[aeiou]/gi , '');
+// }
+// const str ='This website is for losers LOL!';
+// console.log(disemvowel(str));
+
+function dist(v, mu) {
+    const g = 9.81								// suppose reaction time is 1
+    return v*v / (2*mu*g) * (1000/3600)**2 + v*1 * 1000/3600;
 }
-const str ='This website is for losers LOL!';
-console.log(disemvowel(str));
+
+console.log(dist(100, 0.7))
+const d = dist(100, 0.7)
+console.log(d)
+function speed(d, mu) {								// suppose reaction time is 1
+    const g = 9.81	;
+    const alpha = (1000/3600)**2;
+    const beta = (1000/3600)*2*mu*g;
+    const c = -2*mu*g*d;
+    const det = (beta**2 -4*alpha*c)**(1/2);
+    const v = ( -beta + det ) / ( 2 * alpha);
+    return v;
+}
+
+console.log(speed(d, 0.7))
