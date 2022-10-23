@@ -441,22 +441,44 @@
 // const str ='This website is for losers LOL!';
 // console.log(disemvowel(str));
 
-function dist(v, mu) {
-    const g = 9.81								// suppose reaction time is 1
-    return v*v / (2*mu*g) * (1000/3600)**2 + v*1 * 1000/3600;
-}
+// function dist(v, mu) {
+//     const g = 9.81								// suppose reaction time is 1
+//     return v*v / (2*mu*g) * (1000/3600)**2 + v*1 * 1000/3600;
+// }
 
-console.log(dist(100, 0.7))
-const d = dist(100, 0.7)
-console.log(d)
-function speed(d, mu) {								// suppose reaction time is 1
-    const g = 9.81	;
-    const alpha = (1000/3600)**2;
-    const beta = (1000/3600)*2*mu*g;
-    const c = -2*mu*g*d;
-    const det = (beta**2 -4*alpha*c)**(1/2);
-    const v = ( -beta + det ) / ( 2 * alpha);
-    return v;
-}
+// console.log(dist(100, 0.7))
+// const d = dist(100, 0.7)
+// console.log(d)
+// function speed(d, mu) {								// suppose reaction time is 1
+//     const g = 9.81	;
+//     const alpha = (1000/3600)**2;
+//     const beta = (1000/3600)*2*mu*g;
+//     const c = -2*mu*g*d;
+//     const det = (beta**2 -4*alpha*c)**(1/2);
+//     const v = ( -beta + det ) / ( 2 * alpha);
+//     return v;
+// }
 
-console.log(speed(d, 0.7))
+// console.log(speed(d, 0.7))
+
+// function isPangram(string){
+//     let letters = 'abcdefghijklmnopqrstuvwxyz'
+//     letters = letters.split('');
+//     //const arr = string.split('')
+//             //.filter( a=> a !==' ')
+//     // console.log(arr);
+//     return letters.every( v => {
+//         return string.toLowerCase().includes(v);
+//     })
+
+// }
+function isPangram(string){
+    const letters = string.toLowerCase().match(/[a-z]/g);  
+    console.log(letters)
+    const alphabet = [...new Set(letters)]
+    return alphabet.length === 26;
+}
+const str= 'The quick brown fox jumps over the lazy dog.'
+console.log(isPangram(str))
+console.log(str.includes('T'))
+
