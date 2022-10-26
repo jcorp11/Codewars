@@ -472,13 +472,77 @@
 //     })
 
 // }
-function isPangram(string){
-    const letters = string.toLowerCase().match(/[a-z]/g);  
-    console.log(letters)
-    const alphabet = [...new Set(letters)]
-    return alphabet.length === 26;
-}
-const str= 'The quick brown fox jumps over the lazy dog.'
-console.log(isPangram(str))
-console.log(str.includes('T'))
+// function isPangram(string){
+//     const letters = string.toLowerCase().match(/[a-z]/g);  
+//     console.log(letters)
+//     const alphabet = [...new Set(letters)]
+//     return alphabet.length === 26;
+// }
+// const str= 'The quick brown fox jumps over the lazy dog.'
+// console.log(isPangram(str))
+// console.log(str.includes('T'))
 
+// class Dog{
+//     constructor(name, species, size){
+//         this.name = name;
+//         this.species = species;
+//         this.size = size;
+//     }
+//     bark(){
+//         return this.size > 60 ? 'Grrr! Grrr!' : 'Woof! Woof!';
+//     }
+// }
+
+
+// const fang = new Dog("Fang", "boarhound", 75);
+// console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
+// console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
+
+// const snowy = new Dog("Snowy", "terrier", 22);
+// console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
+// console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
+
+// function calculateYears(principal, interest, tax, desired) {
+//     if(principal >= desired) return 0;
+//     const p2 = principal * (1+ interest*(1 - tax))
+//     return p2 > desired ? 1 : 1 + calculateYears(p2, interest , tax, desired)
+// }
+// console.log(calculateYears(1000 , 0.05 , 0.18, 1100))
+
+// function upArray(arr){
+//     if( arr.length === 0 ) return null
+//     for ( val of arr){
+//         if(val < 0 || val > 9) return null
+//     }
+//     const result = arr.slice(0);
+//     let digit = result[result.length -1] + 1 ;
+//     let reminder = Math.floor(digit/10);
+//     digit = digit%10;
+//     result[result.length -1] = digit;
+//     for( i = result.length - 2 ; i >= 0 ; i-- ){
+//         if( reminder === 0) break;
+//         digit = result[i] + reminder;
+//         reminder = Math.floor(digit/10);
+//         digit = digit%10;
+//         result[i] = digit;
+//     }
+//     if(reminder != 0 ) result.unshift(reminder);
+//     return result
+
+// }
+
+
+
+
+// // const arr = [4, 3, 2, 5];
+// const arr = [ 9, 9, 9];
+// console.log(upArray(arr))
+
+function arithmetic(a, b, operator){
+    switch( operator){
+            case 'add': return a+b;
+            case 'substract': return a-b;
+            case 'multiply': return a*b;
+            case 'divide': return a/b;
+    }
+}
