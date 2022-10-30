@@ -1,8 +1,6 @@
 function domainName(url){
     let regex = /(https?:\/\/)?(www\.)?/
     url = url.replace(regex, '');
-    // regex = /www\./
-    // url = url.replace(regex, '');
     
     regex = /\..*/g
     url = url.replace(regex, '');
