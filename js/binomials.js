@@ -1,6 +1,6 @@
 function expand(expr) {
   console.log(expr)
-  const [poly, exponent] = expr.replace(/\(|\)/g,'').split('^');
+  const [poly, exponent] = expr.replace(/\(|\)/g,'').split('^'); // sacar polynomio y exponente
 
   if(+exponent === 0) return '1'
 
